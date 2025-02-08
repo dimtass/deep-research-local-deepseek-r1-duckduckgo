@@ -25,17 +25,9 @@ async function run() {
 
   // Get breath and depth parameters
   const breadth =
-    parseInt(
-      await askQuestion(
-        'Enter research breadth (recommended 2-10, default 4): ',
-      ),
-      10,
-    ) || 4;
+    parseInt(await askQuestion('Enter research breadth (recommended 2-10, default 4): '), 10) || 4;
   const depth =
-    parseInt(
-      await askQuestion('Enter research depth (recommended 1-5, default 2): '),
-      10,
-    ) || 2;
+    parseInt(await askQuestion('Enter research depth (recommended 1-5, default 2): '), 10) || 2;
 
   console.log(`Creating research plan...`);
 
@@ -59,7 +51,7 @@ async function run() {
   const combinedQuery = `
 Initial Query: ${initialQuery}
 Follow-up Questions and Answers:
-${followUpQuestions.map((q, i) => `Q: ${q}\nA: ${answers[i]}`).join('\n')}
+${followUpQuestions.map((q: string, i: number) => `Q: ${q}\nA: ${answers[i]}`).join('\n')}
 `;
 
   console.log('\nResearching your topic...');
@@ -71,9 +63,7 @@ ${followUpQuestions.map((q, i) => `Q: ${q}\nA: ${answers[i]}`).join('\n')}
   });
 
   console.log(`\n\nLearnings:\n\n${learnings.join('\n')}`);
-  console.log(
-    `\n\nVisited URLs (${visitedUrls.length}):\n\n${visitedUrls.join('\n')}`,
-  );
+  console.log(`\n\nVisited URLs (${visitedUrls.length}):\n\n${visitedUrls.join('\n')}`);
   console.log('Writing final report...');
 
   const report = await writeFinalReport({

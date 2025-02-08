@@ -2,12 +2,16 @@
   "name": "open-deep-research",
   "version": "0.0.1",
   "main": "index.ts",
+  "type": "module",
   "scripts": {
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "tsx": "tsx --env-file=.env.local",
     "start": "tsx --env-file=.env.local src/run.ts",
-    "docker": "tsx src/run.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-lm-studio": "tsx --env-file=.env.local src/test-lm-studio.ts",
+    "test-deep-research": "tsx --env-file=.env.local src/test-deep-research.ts",
+    "setup-python": "bash setup_python_env.sh",
+    "start-with-setup": "npm run setup-python && npm start"
   },
   "author": "",
   "license": "ISC",
@@ -17,14 +21,15 @@
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^22.13.0",
     "prettier": "^3.4.2",
+    "ts-node": "^10.9.2",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3"
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.1.9",
-    "@mendable/firecrawl-js": "^1.16.0",
     "ai": "^4.1.17",
     "js-tiktoken": "^1.0.17",
+    "json5": "^2.2.3",
     "lodash-es": "^4.17.21",
     "p-limit": "^6.2.0",
     "zod": "^3.24.1"

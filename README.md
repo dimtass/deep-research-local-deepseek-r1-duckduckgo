@@ -1,5 +1,19 @@
-# Open Deep Research
+# Fork notes
 
+This is a fork from the [deep-research](https://github.com/dzhng/deep-research) github project that instead of OpenAI and Firecrawl it uses the deepseek-r1 model (that is loaded in LM Studio) and the [duckduckgo_search](https://pypi.org/project/duckduckgo-search/).
+
+For my tests I've used the deepseek-r1 14b model.
+
+> This project is not meant to be maintained and it's only for testing purposes therefore I'm not planning to update it in any way
+
+To run the project:
+```
+make run
+```
+
+The rest of the README is the original file from the source repo.
+
+# Open Deep Research
 An AI-powered research assistant that performs iterative, deep research on any topic by combining search engines, web scraping, and large language models.
 
 The goal of this repo is to provide the simplest implementation of a deep research agent - e.g. an agent that can refine its research direction overtime and deep dive into a topic. Goal is to keep the repo size at <500 LoC so it is easy to understand and build on top of.
